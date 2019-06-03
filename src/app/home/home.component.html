@@ -1,0 +1,52 @@
+<div *ngIf="weather" class="container">
+  <div class="main">
+    <h1>Météo sur {{weather.name}}</h1>
+    <br>
+    <div *ngIf="weather.weather[0].main === 'Clear sky'">
+        <i class="fas fa-sun"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].main === 'Few clouds'">
+        <i class="fas fa-cloud"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].main === 'Scattered clouds'">
+        <i class="fas fa-cloud"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].main === 'Broken clouds'">
+        <i class="fas fa-cloud"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].main === 'Shower rain'">
+        <i class="fas fa-cloud-rain"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].main === 'Rain'">
+        <i class="fas fa-cloud-rain"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].main === 'Thunderstorm'">
+        <i class="fas fa-bolt"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].description === 'snow'">
+        <i class="far fa-snowflake"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+    <div *ngIf="weather.weather[0].description === 'mist'">
+        <i class="fas fa-smog"></i>
+        <p class="desc">{{weather.weather[0].description}}</p>
+    </div>
+  </div>
+    <br>
+  <div class="details">
+    <p><i class="fas fa-temperature-high"></i> {{weather.main.temp}} °C</p>
+    <p><i class="fas fa-tint"></i> {{weather.main.humidity}} %</p>
+  </div>
+</div>
+
+<footer>
+    <p>Maj: aujourd'hui à {{date|date:'shortTime'}}</p>
+</footer>
+
